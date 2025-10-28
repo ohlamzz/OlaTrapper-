@@ -5,26 +5,14 @@ drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
 
 [traps]
 
-[traps.hello_world]
-path = "out/HelloWorldTrap.sol/HelloWorldTrap.json"
-response_contract = "0x183D78491555cb69B68d2354F7373cc2632508C7"
-response_function = "helloworld(string)"
+[traps.newtokenpairspamtrap]
+path = "out/NewTokenPairSpamTrap.sol/NewTokenPairSpamTrap.json"
+response_contract = "0x56B0Dc210058397269f793F99cC60431e3368dfd"
+response_function = "response(uint256)"
 cooldown_period_blocks = 33
 min_number_of_operators = 1
 max_number_of_operators = 2
 block_sample_size = 10
 private_trap = true
-whitelist = []
-
-# Uncomment this to deploy the TransferEventTrap
-
-# [traps.transfer_event_trap]
-# path = "out/TransferEventTrap.sol/TransferEventTrap.json"
-# response_contract = "0x183D78491555cb69B68d2354F7373cc2632508C7"
-# response_function = "helloworld(string)"
-# cooldown_period_blocks = 33
-# min_number_of_operators = 1
-# max_number_of_operators = 2
-# block_sample_size = 10
-# private_trap = true
-# whitelist = []
+whitelist = ["0xeb921882e74e8f0dda3a71aee3497af0b3ec8d63"]
+address = "0xccca42F6805e58B8E920097De1AAe2c714f2a801"
