@@ -1,3 +1,32 @@
+# 🧠 NewTokenPairSpamTrap
+
+A smart contract built for the **Drosera Network** that detects potential _token pair spam activity_ on-chain.  
+This trap monitors token pair creation events and triggers a response when suspicious or excessive pair counts are detected — helping keep decentralized exchanges clean and transparent.
+
+---
+
+## ⚙️ Overview
+
+The **NewTokenPairSpamTrap** integrates with Drosera’s _Trap Framework_ and works with three core components:
+
+- **`TokenFactoryMock.sol`** → Simulates token pair creation  
+- **`ResponseContract.sol`** → Receives and logs alerts from the trap  
+- **`NewTokenPairSpamTrap.sol`** → The main trap logic  
+
+When the number of pairs from the TokenFactory exceeds a set threshold, the trap signals the response contract to execute an action.
+
+---
+
+## 🧩 Architecture
+
+```mermaid
+graph TD
+    A[TokenFactoryMock] -->|pairCount()| B[NewTokenPairSpamTrap]
+    B -->|trigger condition| C[ResponseContract]
+    C --> D[Drosera Operator Network]
+
+```
+
 # Drosera Trap Foundry Template
 
 This repo is for quickly bootstrapping a new Drosera project. It includes instructions for creating your first trap, deploying it to the Drosera network, and updating it on the fly.
