@@ -25,7 +25,7 @@ A[TokenFactoryMock] -->|pairCount()|
 B[NewTokenPairSpamTrap] B -->|trigger condition| 
 C[ResponseContract] C --> D[Drosera Operator Network]```
 
-```
+
 
 ## Project Structure
 
