@@ -19,7 +19,6 @@ When the number of pairs from the TokenFactory exceeds a set threshold, the trap
 
 ## 🧩 Architecture
 
-```mermaid
 graph TD
     A[TokenFactoryMock] -->|pairCount()| B[NewTokenPairSpamTrap]
     B -->|trigger condition| C[ResponseContract]
