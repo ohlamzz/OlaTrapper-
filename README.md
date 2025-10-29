@@ -26,6 +26,22 @@ graph TD
 
 ```
 
+## Project Structure
+
+```OhlamzzTrap/
+├── src/
+│   ├── TokenFactoryMock.sol
+│   ├── ResponseContract.sol
+│   └── NewTokenPairSpamTrap.sol
+├── scripts/
+│   └── DeployAll.s.sol
+├── foundry.toml
+├── drosera.toml
+├── .env
+└── README.md
+
+```
+
 # Drosera Trap Foundry Template
 
 This repo is for quickly bootstrapping a new Drosera project. It includes instructions for creating your first trap, deploying it to the Drosera network, and updating it on the fly.
