@@ -23,9 +23,9 @@ When the number of pairs from the TokenFactory exceeds a set threshold, the trap
 graph TD 
 A[TokenFactoryMock] -->|pairCount()| 
 B[NewTokenPairSpamTrap] B -->|trigger condition| 
-C[ResponseContract] C --> D[Drosera Operator Network]```
+C[ResponseContract] C --> D[Drosera Operator Network]
 
-
+___
 
 ## Project Structure
 
