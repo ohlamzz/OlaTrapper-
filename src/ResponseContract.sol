@@ -6,24 +6,32 @@ interface ITokenFactory {
 }
 
 contract ResponseContract {
-    address public immutable TOKEN_FACTORY_ADDRESS;
     address public owner;
+    address public droseraExecutor;
+    ITokenFactory public factory;
 
     event ScamAlertTriggered(address indexed detector, uint256 flaggedCount, string message);
 
-    constructor(address _tokenFactoryAddress) {
-        TOKEN_FACTORY_ADDRESS = _tokenFactoryAddress;
-        owner = msg.sender;
+    modifier onlyAuthorized() {
+        require(msg.sender == owner || msg.sender == droseraExecutor, "not authorized");
+        _;
     }
 
-    function response(uint256 flaggedCount) external {
-        require(msg.sender != address(0), "Invalid caller");
+    constructor(address _droseraExecutor, address _factory) {
+        owner = msg.sender;
+        droseraExecutor = _droseraExecutor;
+        factory = ITokenFactory(_factory);
+    }
 
-        if (flaggedCount > 10) {
+    function setDroseraExecutor(address a) external {
+        require(msg.sender == owner, "only owner");
+        droseraExecutor = a;
+    }
+
+    function response(uint256 flaggedCount) external onlyAuthorized {
+        if (flaggedCount > 0) {
             emit ScamAlertTriggered(msg.sender, flaggedCount, "Potential Token Pair Spam Detected");
-
-            // Optional: automatically pause the factory when triggered
-            // ITokenFactory(TOKEN_FACTORY_ADDRESS).pauseFactory();
+            factory.pauseFactory(); // optional safety action
         }
     }
 }

@@ -7,7 +7,7 @@ drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
 
 [traps.newtokenpairspamtrap]
 path = "out/NewTokenPairSpamTrap.sol/NewTokenPairSpamTrap.json"
-response_contract = "0x56B0Dc210058397269f793F99cC60431e3368dfd"
+response_contract = "0x7D3bb034C811Dc3701b215b0a61F3Ee1aA48210c"
 response_function = "response(uint256)"
 cooldown_period_blocks = 33
 min_number_of_operators = 1
